@@ -1,0 +1,55 @@
+\documentclass[twocolumn,twoside,9.5pt]{jarticle}
+\usepackage[dvips]{graphicx}
+\usepackage{picins}
+\usepackage{fancyhdr}
+%\pagestyle{fancy}
+\lhead{\parpic{\includegraphics[height=1zw,keepaspectratio,bb=0 0 251 246]{pic/emblem-bitmap.pdf}}琉球大学主催 工学部工学科知能情報コース 中間発表予稿}
+\rhead{}
+\cfoot{}
+
+\setlength{\topmargin}{-1in \addtolength{\topmargin}{15mm}}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{5mm}
+\setlength{\oddsidemargin}{-1in \addtolength{\oddsidemargin}{11mm}}
+\setlength{\evensidemargin}{-1in \addtolength{\evensidemargin}{21mm}}
+\setlength{\textwidth}{181mm}
+\setlength{\textheight}{261mm}
+\setlength{\footskip}{0mm}
+\pagestyle{empty}
+
+\begin{document}
+\title{CNNを用いた楽曲の感情分類\\Emotional classification of songs using CNN}
+\author{学籍番号 {175720C} 氏名 {松田理美} 指導教員 : 山田孝治}
+\date{}
+\maketitle
+\thispagestyle{fancy} 
+
+\section{はじめに}
+音楽を聴いた時,人は楽しい気分になったり,その曲に荘厳さを感じたりする.これは\cite{1}に述べられているように,音楽と感情が深い関係にあるからである.音楽を聴いて何か特定の感情を得たいという際に,その感情を得ることができる楽曲を選ぶことになるが,その為には既にその楽曲を聴いたことがある前提となる.そのため,新しい楽曲を開拓していくことは難しい.\\
+　現在のApple Musicなどにある楽曲検索システムでは,オススメと表示される楽曲は,最近聴いていた楽曲のアーティストの別の楽曲などが表示されるが,同じアーティストでも曲の雰囲気が違うことはあり得るので,求める楽曲が並ばないことがある.オススメされた楽曲をお気に入り楽曲として登録していくことで,自分の求める楽曲を集めていくことはできるが,その楽曲を一度聴いてから判断する必要があるので,時間がかかってしまう.\\
+　\cite{2},\cite{3}では,楽曲の歌詞に注目して,歌詞情報に基づく楽曲聴取者の気分に応じた楽曲推薦システムの実現を目指していた.歌詞から取得した感情単語を元に,楽曲の感情分類を行なっていたが,評価実験を行うにあたって,楽曲を実際被験者に聴取させ,5種類の感情の中から1つ以上を選択する形を採っていた.しかし,実際に楽曲を聴くことになるので,楽曲の持つメロディで判断している可能性があった.\\
+　そこで本研究では,楽曲のメロディのみに注目し,メロディのみでも感情分類が行えるかを調査するために,メロディ情報に基づく楽曲聴取者の気分に応じた楽曲推薦システムの実現を目指す.\\
+　先行研究で行われた,音声ファイルの波形から特徴量を抽出し,CNNを利用して分類する研究を元に,楽曲聴取者が感じた感情と比較し,メロディを情報を元にした楽曲の分類を行う.
+\section{先行研究}
+
+
+\section{提案手法}
+\cite{4}での特徴量の抽出の手法と,\cite{2},\cite{3}での感情分類に利用された感情カテゴリーを利用し,以下の手順で波形分類を行う.
+
+
+
+\section{今後の課題}
+
+\begin{thebibliography}{9}
+
+\bibitem{1} 音楽と感情, 大串健吾, 2006
+\bibitem{2} 歌詞情報を用いた楽曲の推薦システム, 具志堅大輝, 山田孝治, 2019
+\bibitem{3} 歌詞情報を用いた歌詞の楽曲分類手法, 具志堅大輝, 山田孝治, 2020
+\bibitem{4} DEEP CONVOLUTIONAL NETWORKS ON THE PITCH SPIRAL FOR MUSICAL INSTRUMENT RECONGNITION, Vincent Lostanlen and Carmine-Emanuele Cella,\'{E}cole normale sup\'{e}rieure, PSL Research University, CNRS, Paris, France
+\bibitem{5} Experimental Studies of the Elements of Expression in Music, Kate Hevner
+\bibitem{6} 古屋瑞生・黄宏軒・川越恭二(2014)「歌詞情報に基づく 聴取目的に応じた楽曲推薦システムの提案」, 情報処理 学会第 76 回全国大会
+\bibitem{7} 聴取目的に応じた音楽推薦のための歌詞からの音楽印象 分類方法, 古屋瑞生・黄宏軒・川越恭二, 2015
+
+
+\end{thebibliography}
+\end{document}

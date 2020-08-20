@@ -1,0 +1,65 @@
+\documentclass[a4j,12pt]{jreport}
+\usepackage[dvips]{graphicx}
+\usepackage{mythesis}
+\usepackage{multirow}
+\usepackage{here}
+\setlength{\itemsep}{-1zh}
+\title{}
+\icon{
+		\includegraphics[width=80mm,bb=0 0 595 842]{fig/ryukyu.pdf}
+	}
+\year{平成Y年度 卒業論文}
+\belongto{琉球大学工学部情報工学科}
+\author{0957  \\ 指導教員 {} }
+%%
+%% プリアンブルに記述
+%% Figure 環境中で Table 環境の見出しを表示・カウンタの操作に必要
+%%
+\makeatletter
+\newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+\newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+\makeatother
+\setlength\abovecaptionskip{0pt}
+
+\begin{document}
+
+% タイトル
+\maketitle
+\baselineskip 17pt plus 1pt minus 1pt
+
+\pagenumbering{roman}
+\setcounter{page}{0}
+
+\tableofcontents	% 目次
+\listoffigures		% 図目次
+\listoftables		% 表目次
+
+%以下のように、章ごとに個別の tex ファイルを作成して、
+% main.tex をコンパイルして確認する。
+%章分けは個人で違うので下のフォーマットを参考にして下さい。
+
+% はじめに
+\input{chapter1.tex}
+
+% 基礎概念
+\input{chapter2.tex}
+
+% 実験
+\input{chapter3.tex}
+
+% 他の論文との比較
+%\input{chapter4.tex}
+
+% 今後の課題
+\input{future.tex}
+
+% 参考文献
+\input{bibliography.tex}
+
+% 謝辞
+\input{thanks.tex}
+
+% 付録
+%\input{appendix.tex}
+
+\end{document}

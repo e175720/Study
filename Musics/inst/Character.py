@@ -4,20 +4,28 @@ import librosa.display
 import matplotlib.pyplot as plt
 import glob
 
-files = glob.glob("./split_inst/*")
-for filename in files:
+fileinst = glob.glob("./split_inst/*")
+print("a")
+
+for filename in fileinst:
 
     #y=オーディオ時系列、sr=目標サンプリングレート、offset=設定時間後に読み取り開始(秒単位)
     #duration=入力されたオーディオを読み込む長さ(秒単位)
     y, sr = librosa.load(filename, sr=4410, offset=0.0, duration=60.0)
 
-    wavename = filename.split('/')
-    
-
+    namesplit = filename.split('/')
+    namesplit[1] = "wave_inst"
+    filesplit = namesplit[2].split('.')
+    filesplit[1] = "jpg"
+    namesplit[2] = '.'.join(filesplit)
+    savewave = '/'.join(namesplit)
 
     #波形表示
     librosa.display.waveplot(y=y, sr=sr)
-    plt.savefig('wave_inst/So_Obvious_1_2.png')
+    plt.savefig(savewave)
+
+    namesplit[1] = "mel_inst"
+    savemel = '/'.join(namesplit)
 
     # n_mels=生成するメルバンドの数
     n_mels=128
@@ -38,6 +46,4 @@ for filename in files:
     plt.colorbar(format='%+2.0f dB')
     plt.title('Mel spectrogram')
     plt.tight_layout()
-    plt.savefig('Pictures2/So_Obvious_01_2.png')
-
-
+    plt.savefig(savemel)
